@@ -1,6 +1,6 @@
 {
-  "name": "ng-deno-server",
-  "version": "0.0.0",
+  "name": "ng-deno",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
