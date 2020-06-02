@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-deno-server": {
+    "ng-deno": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-deno-server",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-deno-server:build"
+            "browserTarget": "ng-deno:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-deno-server:build:production"
+              "browserTarget": "ng-deno:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-deno-server:build"
+            "browserTarget": "ng-deno:build"
           }
         },
         "test": {
@@ -114,15 +114,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ng-deno-server:serve"
+            "devServerTarget": "ng-deno:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-deno-server:serve:production"
+              "devServerTarget": "ng-deno:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "ng-deno-server"
+    }
+  },
+  "defaultProject": "ng-deno"
 }
