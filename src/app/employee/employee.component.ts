@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../data-service/employee.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Observable, combineLatest } from 'rxjs';
+import { Observable, combineLatest, EMPTY } from 'rxjs';
 import { Employee } from '../model/employee.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { switchMap, filter } from 'rxjs/operators';
@@ -15,6 +15,7 @@ export class EmployeeComponent implements OnInit {
 
   form: FormGroup;
   isEdit = false;
+  private employee: Employee;
 
   constructor(
     private service: EmployeeService,
@@ -35,11 +36,12 @@ export class EmployeeComponent implements OnInit {
             return this.service.getEmployee(eId);
           }
           this.isEdit = false;
-          return null;
+          return EMPTY;
         }),
         filter(f => !!f)
       )
       .subscribe(employee => {
+        this.employee = employee;
         this.form.patchValue(employee);
       });
 
@@ -57,7 +59,7 @@ export class EmployeeComponent implements OnInit {
 
   createEmployee() {
     if (this.form.valid) {
-      this.service.createEmployee(this.form.value).subscribe(() => {
+      this.service.createEmployee(this.form.value as Employee).subscribe(() => {
         this.navigateBack();
       });
     }
@@ -65,7 +67,8 @@ export class EmployeeComponent implements OnInit {
 
   updateEmployee() {
     if (this.form.valid) {
-      this.service.updateEmployee(this.form.value).subscribe(() => {
+      const payload = { ...this.employee, ...this.form.value };
+      this.service.updateEmployee(payload).subscribe(() => {
         this.navigateBack();
       });
     }
@@ -74,7 +77,8 @@ export class EmployeeComponent implements OnInit {
   removeEmployee() {
     const remove = window.confirm('Are you sure?');
     if (remove) {
-      this.service.removeEmployee(this.form.value).subscribe(() => {
+      const payload = { ...this.employee, ...this.form.value };
+      this.service.removeEmployee(payload).subscribe(() => {
         this.navigateBack();
       });
     }

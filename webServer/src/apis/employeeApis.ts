@@ -24,7 +24,8 @@ export const addEmployee = async (
     if (!request.hasBody) {
         response.status = 400;
     } else {
-        const newEmployee: Employee = await request.body();
+        const payload = await request.body();
+        const newEmployee: Employee = payload.value;
 
         newEmployee.id = getNextEmployeeId();
         EmployeeData.push(newEmployee);
