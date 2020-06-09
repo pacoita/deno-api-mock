@@ -8,7 +8,7 @@ This project is composed by two parts:
 
 ## Context
 
-This is the practical demo for the [Dev article](https://dev.to/paco_ita/create-an-angular-rest-api-mock-with-deno-4of1-temp-slug-8578314) I wrote. Feel free to have a look at it for more details.
+This is the practical demo for the [Dev article](https://dev.to/paco_ita/create-an-angular-rest-api-mock-with-deno-598b) I wrote. Feel free to have a look at it for more details.
 
 <p align="center">
 <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zaxNbWmc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/7lxybbz4tj6o0ax1w9ox.png" alt="app_layout">
