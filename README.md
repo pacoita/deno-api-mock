@@ -2,9 +2,9 @@
 
 This project is composed by two parts:
 
-- **Angular**: inside `src` folder. It follows the classical Angular project structure.
+- **Angular**: it follows the classical Angular project structure. A service exposes all CRUD operations available to the app and the data is displayed using a mat-table.
 
-- **Deno**: inside the `webServer` folder.
+- **Deno server**: inside the `webServer` folder. Provides endpoints to a generic client and allows to decouple the client app from eventual local JSON mocks.
 
 ## Context
 
