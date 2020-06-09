@@ -1,27 +1,24 @@
 # NgDenoServer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.2.
+This project is composed by two parts:
 
-## Development server
+- **Angular**: inside `src` folder. It follows the classical Angular project structure.
+
+- **Deno**: inside the `webServer` folder.
+
+## Context
+
+This is the practical demo for the [Dev article](https://dev.to/paco_ita/create-an-angular-rest-api-mock-with-deno-4of1-temp-slug-8578314) I wrote. Feel free to have a look at it for more details.
+
+<p align="center">
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zaxNbWmc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/7lxybbz4tj6o0ax1w9ox.png" alt="app_layout">
+</p> 
+
+## Run the Angular app
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Run Deno mock server
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+From the `webServer` folder, run `deno run --allow-net server.ts` to start the server (you might want to add Deno to your env variables if you want to run it from any path). By default, it will listen on PORT 8280. If you change it, align the PORT value with the variable used by Angular in the `environments` folder (within the Angular app scope). 
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
