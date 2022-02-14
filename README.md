@@ -20,5 +20,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Run Deno mock server
 
-From the `webServer` folder, run `deno run --allow-net server.ts` to start the server (you might want to add Deno to your env variables if you want to run it from any path). By default, it will listen on PORT 8280. If you change it, align the PORT value with the variable used by Angular in the `environments` folder (within the Angular app scope). 
+From the `webServer` folder, run `deno run --allow-net server.ts` to start the server (you might want to add Deno to your env variables if you want to run it from any path). By default, it will listen on PORT 8280. <br>If you change it, align the PORT value with the variable used by Angular in the `environments` folder (within the Angular app scope). 
 
